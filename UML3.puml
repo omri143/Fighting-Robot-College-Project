@@ -1,0 +1,60 @@
+@startuml
+class com.app.robot.dialogs.HitDialog {
++ Dialog onCreateDialog(Bundle)
+}
+class com.app.robot.fragments.LaserControlFragment {
+- DatabaseReference laser
+- DatabaseReference laser_ctrl
+- ToggleButton toggleButton
+- TextView textView
+- TextView textViewDirection
+- TextView xDisplay
+- int x_angle
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
++ boolean onTouch(View,MotionEvent)
++ void onCheckedChanged(CompoundButton,boolean)
++ void onDataChange(DataSnapshot)
++ void onCancelled(DatabaseError)
+- void initServos(int,int)
+- void updateDisplay(int,int)
+- void rotateXServo(boolean,View)
+- void rotateYServo(boolean,View)
+}
+class com.app.robot.fragments.MotorsControlFragment {
+- TextView speedView
+- DatabaseReference motorNode
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
++ boolean onTouch(View,MotionEvent)
+- void writeToMotors(boolean,boolean,boolean,boolean)
+}
+class com.app.robot.main.MainActivity {
+- DatabaseReference laser_hit
+- HitDialog hitDialog
+- ViewPager2 viewPager2
+# void onCreate(Bundle)
++ void onDataChange(DataSnapshot)
++ void onCancelled(DatabaseError)
+- void openDialog()
++ void onTabSelected(TabLayout.Tab)
++ void onTabUnselected(TabLayout.Tab)
++ void onTabReselected(TabLayout.Tab)
+}
+class com.app.robot.adapters.PageViewAdapter {
+~ int numOfFragments
++ Fragment createFragment(int)
++ int getItemCount()
+}
+
+
+androidx.appcompat.app.AppCompatDialogFragment <|-- com.app.robot.dialogs.HitDialog
+com.app.robot.fragments.OnTouchListener <|.. com.app.robot.fragments.LaserControlFragment
+com.app.robot.fragments.OnCheckedChangeListener <|.. com.app.robot.fragments.LaserControlFragment
+com.google.firebase.database.ValueEventListener <|.. com.app.robot.fragments.LaserControlFragment
+androidx.fragment.app.Fragment <|-- com.app.robot.fragments.LaserControlFragment
+com.app.robot.fragments.OnTouchListener <|.. com.app.robot.fragments.MotorsControlFragment
+androidx.fragment.app.Fragment <|-- com.app.robot.fragments.MotorsControlFragment
+com.google.firebase.database.ValueEventListener <|.. com.app.robot.main.MainActivity
+com.app.robot.main.OnTabSelectedListener <|.. com.app.robot.main.MainActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.app.robot.main.MainActivity
+androidx.viewpager2.adapter.FragmentStateAdapter <|-- com.app.robot.adapters.PageViewAdapter
+@enduml

@@ -1,0 +1,53 @@
+@startuml
+skinparam defaultFontName Segoe UI
+skinparam defaultFontSize 20
+class com.app.robot.dialogs.HitDialog extends androidx.appcompat.app.AppCompatDialogFragment {
++ <size:15>Dialog onCreateDialog(Bundle)
+}
+class com.app.robot.fragments.LaserControlFragment extends androidx.fragment.app.Fragment implements android.view.View.OnTouchListener,android.view.View.OnClickListener,android.view.View.OnCheckedChangeListener, com.google.firebase.database.ValueEventListener{
+- <size:15>DatabaseReference laser
+- <size:15>DatabaseReference laser_ctrl
+- <size:15>ToggleButton toggleButton
+- <size:15>TextView textView
+- <size:15>TextView textViewDirection
+- <size:15>TextView xDisplay
+- <size:15>int x_angle
+- <size:15>int y_angle
++ <size:15>View onCreateView(LayoutInflater,ViewGroup,Bundle)
++ <size:15>boolean onTouch(View,MotionEvent)
++ <size:15>void onCheckedChanged(CompoundButton,boolean)
++ <size:15>void onDataChange(DataSnapshot)
++ <size:15>void onCancelled(DatabaseError)
++ <size:15>void onClick(View)
+- <size:15>void initServos(int,int)
+- <size:15>void updateDisplay(int,int)
+- <size:15>void rotateXServo(boolean,View)
+- <size:15>void rotateYServo(boolean,View)
+}
+
+class com.app.robot.fragments.MotorsControlFragment extends androidx.fragment.app.Fragment implements android.view.View.OnTouchListener {
+- <size:15>TextView speedView
+- <size:15>DatabaseReference motorNode
++ <size:15>View onCreateView(LayoutInflater,ViewGroup,Bundle)
++ <size:15>boolean onTouch(View,MotionEvent)
+- <size:15>void writeToMotors(boolean,boolean,boolean,boolean)
+}
+class com.app.robot.main.MainActivity extends androidx.appcompat.app.AppCompatActivity implements com.google.firebase.database.ValueEventListener,com.google.android.material.tabs.TabLayout.OnTabSelectedListener {
+- <size:15>DatabaseReference laser_hit
+- <size:15>HitDialog hitDialog
+- <size:15>ViewPager2 viewPager2
+# <size:15>void onCreate(Bundle)
++ <size:15>void onDataChange(DataSnapshot)
++ <size:15>void onCancelled(DatabaseError)
+- <size:15>void openDialog()
++ <size:15>void onTabSelected(TabLayout.Tab)
++<size:15> void onTabUnselected(TabLayout.Tab)
++ <size:15>void onTabReselected(TabLayout.Tab)
+}
+class com.app.robot.adapters.PageViewAdapter extends androidx.viewpager2.adapter.FragmentStateAdapter {
+~ <size:15>int numOfFragments
++ <size:15>Fragment createFragment(int)
++ <size:15>int getItemCount()
+}
+
+@enduml

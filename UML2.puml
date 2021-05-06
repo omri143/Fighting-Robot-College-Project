@@ -1,0 +1,10 @@
+@startuml
+class com.app.robot.adapters.PageViewAdapter {
+~ int numOfFragments
++ Fragment createFragment(int)
++ int getItemCount()
+}
+
+
+androidx.viewpager2.adapter.FragmentStateAdapter <|-- com.app.robot.adapters.PageViewAdapter
+@enduml

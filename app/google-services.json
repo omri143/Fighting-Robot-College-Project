@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "103171573796",
+    "firebase_url": "https://fighting-robot.firebaseio.com",
+    "project_id": "fighting-robot",
+    "storage_bucket": "fighting-robot.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:103171573796:android:8e3e04bf096e3dfbc570b1",
+        "android_client_info": {
+          "package_name": "com.app.robot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "103171573796-8f11i5s1u3abm93279jskhig7tmm1ich.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC6JFE_poloxDEr1T_eslKfYah-M_LlGU0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "103171573796-8f11i5s1u3abm93279jskhig7tmm1ich.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
