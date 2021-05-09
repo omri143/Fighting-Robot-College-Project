@@ -13,8 +13,8 @@
 //Firebase and Wifi Constants
 #define FIREBASE_HOST "fighting-robot.firebaseio.com"
 #define FIREBASE_AUTH "8foa9a8mXQJPgG0eaJbAKLC2TCQsjChqrk0SfGrm"
-#define WIFI_SSID "POCOPHONE"
-#define WIFI_PASSWORD "c026ffbfba5b"
+#define WIFI_SSID "Kinneret College"
+#define WIFI_PASSWORD ""
 
 //Sensors pins
 #define TRIG_PIN A1
@@ -97,7 +97,6 @@ void loop()
     hitFlag = false;
   }
   controller.ping();
-  delay(50);
 }
 /*
  * Initialize I/O Pins
@@ -121,7 +120,7 @@ void connectToWifiAndFB()
   int status = WL_IDLE_STATUS;
   while (status != WL_CONNECTED)
   {
-    status = WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
+    status = WiFi.begin(WIFI_SSID);
     delay(300);
   }
   
@@ -169,7 +168,7 @@ void readFirebaseData()
     {
       motorForward = firebaseData.boolData();
     }
-    else if(firebaseData.dataPath()+ == "/Movement/Backward")
+    else if(firebaseData.dataPath() == "/Movement/Backward")
     {
       motorBackward = firebaseData.boolData();
     }
