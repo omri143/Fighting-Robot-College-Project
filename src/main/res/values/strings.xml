@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Robot</string>
+    <string name="tab1">Motors Control</string>
+    <string name="tab2">Laser Control</string>
+    <string name="text_view_speed">Current Speed: </string>
+    <string name="override_laser">Override laser control</string>
+    <string name="laser_state">Laser state: </string>
+    <string name="text_view_direction">Direction: </string>
+    <string name="negX"> Negative X</string>
+    <string name="posX"> Positive X</string>
+    <string name="negY"> Negative Y</string>
+    <string name="posY"> Positive Y</string>
+    <string name="empty"></string>
+    <string name="center_servos">Center servos</string>
+    <string name="hit_msg">You have been hit</string>
+</resources>
