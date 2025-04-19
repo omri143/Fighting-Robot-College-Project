@@ -1,5 +1,5 @@
 <h1> Fighting Robot College Project</h1>
-**My partner and I built a robot prototype that can be controlled remotely via an Android application we developed.**  
+My partner and I built a robot prototype that can be controlled remotely via an Android application we developed.  
 The robot was built as part of our final project in a practical engineering program during the Winter of 2021.
 
 ## Overview
